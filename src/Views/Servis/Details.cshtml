@@ -1,0 +1,42 @@
+﻿@model KuaforSalonu.Models.Servis
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Servis</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sure)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sure) dk
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ucret)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ucret) ₺
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Calisan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Calisan.Isim)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
