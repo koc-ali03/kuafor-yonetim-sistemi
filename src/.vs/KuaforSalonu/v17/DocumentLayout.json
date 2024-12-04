@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\views\\calisan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\views\\calisan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\views\\salon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\views\\salon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\views\\servis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\views\\servis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\controllers\\serviscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\controllers\\serviscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\data\\kuafordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\data\\kuafordbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\models\\servis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\models\\servis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\controllers\\calisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\controllers\\calisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\models\\calisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\models\\calisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|c:\\users\\ali\\source\\repos\\kuaforsalonu\\kuaforsalonu\\models\\salon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84D5AEB-FA46-4D4C-9EFC-7E4DD2C9CF4C}|KuaforSalonu\\KuaforSalonu.csproj|solutionrelative:kuaforsalonu\\models\\salon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Servis\\Index.cshtml",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Views\\Servis\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Servis\\Index.cshtml",
+              "RelativeToolTip": "KuaforSalonu\\Views\\Servis\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T09:43:59.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Salon\\Index.cshtml",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Views\\Salon\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Salon\\Index.cshtml",
+              "RelativeToolTip": "KuaforSalonu\\Views\\Salon\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T09:43:58.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Calisan\\Index.cshtml",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Views\\Calisan\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Views\\Calisan\\Index.cshtml",
+              "RelativeToolTip": "KuaforSalonu\\Views\\Calisan\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T09:43:57.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServisController.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Controllers\\ServisController.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Controllers\\ServisController.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Controllers\\ServisController.cs",
+              "RelativeToolTip": "KuaforSalonu\\Controllers\\ServisController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwEMAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:52:49.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KuaforDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Data\\KuaforDbContext.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Data\\KuaforDbContext.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Data\\KuaforDbContext.cs",
+              "RelativeToolTip": "KuaforSalonu\\Data\\KuaforDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:31:29.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Calisan.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Calisan.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Models\\Calisan.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Calisan.cs",
+              "RelativeToolTip": "KuaforSalonu\\Models\\Calisan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T07:48:20.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Salon.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Salon.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Models\\Salon.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Salon.cs",
+              "RelativeToolTip": "KuaforSalonu\\Models\\Salon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T07:26:27.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Servis.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Servis.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Models\\Servis.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Models\\Servis.cs",
+              "RelativeToolTip": "KuaforSalonu\\Models\\Servis.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T07:48:26.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CalisanController.cs",
+              "DocumentMoniker": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Controllers\\CalisanController.cs",
+              "RelativeDocumentMoniker": "KuaforSalonu\\Controllers\\CalisanController.cs",
+              "ToolTip": "C:\\Users\\Ali\\source\\repos\\KuaforSalonu\\KuaforSalonu\\Controllers\\CalisanController.cs",
+              "RelativeToolTip": "KuaforSalonu\\Controllers\\CalisanController.cs",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAcwJIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:00:56.149Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
