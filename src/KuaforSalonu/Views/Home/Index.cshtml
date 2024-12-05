@@ -1,8 +1,131 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ana Sayfa";
 }
+<link rel="stylesheet" href="~/css/anaSayfa.css" asp-append-version="true" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4">Randevu Almanın Kolay Yolu</h1>
+        <p class="lead">Birden fazla kuaför veya berber salonundan randevu almak artık çok kolay! Hemen başlayın ve istediğiniz hizmeti seçin.</p>
+        <a href="~/Views/Salon" class="btn btn-primary btn-lg mt-3">Salonlarımızı Keşfedin</a>
+    </div>
+</div>
+
+<div id="salons" class="salon-section container mt-5">
+    <h2 class="text-center mb-4">Kuaför ve Berber Salonlarımız</h2>
+    <div class="row">
+        <!-- Salon 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/image/salon1.jpg" class="card-img-top" alt="Salon 1">
+                <div class="card-body">
+                    <h5 class="card-title">Elite Barber</h5>
+                    <p class="card-text">Profesyonel hizmet ve modern saç stilleri için Elite Barber'ı tercih edin.</p>
+                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
+                </div>
+            </div>
+        </div>
+        <!-- Salon 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/image/salon2.jpg" class="card-img-top" alt="Salon 2">
+                <div class="card-body">
+                    <h5 class="card-title">Modern Kuaför</h5>
+                    <p class="card-text">Bakım ve güzellik hizmetleri için uzman kadromuzla hizmetinizdeyiz.</p>
+                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
+                </div>
+            </div>
+        </div>
+        <!-- Salon 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/image/salon3.jpg" class="card-img-top" alt="Salon 3">
+                <div class="card-body">
+                    <h5 class="card-title">City Barber</h5>
+                    <p class="card-text">Şehir merkezinde kolay ulaşım ve kaliteli hizmet için bizi tercih edin.</p>
+                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="services-section container mt-5">
+    <h2 class="text-center mb-4">Sunduğumuz Hizmetler</h2>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <i class="fas fa-cut fa-3x"></i>
+            <h5>Saç Kesimi</h5>
+            <p>Modern ve klasik saç kesimleri.</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-spa fa-3x"></i>
+            <h5>Bakım</h5>
+            <p>Cilt ve saç bakım hizmetleri.</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-paint-brush fa-3x"></i>
+            <h5>Renklendirme</h5>
+            <p>Profesyonel saç boyama.</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-hand-sparkles fa-3x"></i>
+            <h5>Manikür & Pedikür</h5>
+            <p>El ve ayak bakımı.</p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials-section container mt-5">
+    <h2 class="text-center mb-4">Müşteri Yorumları</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="testimonial">
+                <p>"Hizmetten çok memnun kaldım. Elite Barber harika!"</p>
+                <h6>- Ahmet Y.</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial">
+                <p>"Randevu almak çok kolaydı. City Barber tavsiye edilir."</p>
+                <h6>- Elif K.</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial">
+                <p>"Profesyonel bir ekiple muhteşem bir deneyim yaşadım."</p>
+                <h6>- Mehmet T.</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-section container mt-5">
+    <h2 class="text-center mb-4">Sık Sorulan Sorular</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Randevuyu nasıl iptal edebilirim?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    Randevu detaylarınızdan "İptal Et" butonuna tıklayarak iptal işlemi yapabilirsiniz.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Ödemeyi nasıl yapabilirim?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Ödemeyi online olarak ya da salonda gerçekleştirebilirsiniz.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

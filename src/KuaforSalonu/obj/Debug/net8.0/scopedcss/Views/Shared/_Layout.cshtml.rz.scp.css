@@ -40,9 +40,15 @@ button.accept-policy[b-r9bsj7064a] {
 }
 
 .footer[b-r9bsj7064a] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    position: relative; /* Absolute yerine relative veya static kullan */
+    bottom: auto; /* Sayfa içeriği ile birlikte hizalansın */
+    width: 100%;
+    background-color: #222;
+    color: #f1c40f;
+    text-align: center;
+    line-height: 60px;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
 }
+
