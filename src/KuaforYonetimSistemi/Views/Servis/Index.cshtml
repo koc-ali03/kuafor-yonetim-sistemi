@@ -1,0 +1,53 @@
+﻿@model IEnumerable<KuaforYonetimSistemi.Models.Servis>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Servisler</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ucret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calisan)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sure) dk
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ucret) ₺
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calisan.Isim)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

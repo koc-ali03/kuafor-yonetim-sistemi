@@ -1,0 +1,48 @@
+﻿@model KuaforYonetimSistemi.Models.Salon
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Salon</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IletisimBilgisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IletisimBilgisi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcilisSaati)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcilisSaati)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KapanisSaati)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KapanisSaati)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

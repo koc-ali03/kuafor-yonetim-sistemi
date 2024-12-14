@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+<<<<<<< HEAD:src/KuaforYonetimSistemi/obj/KuaforYonetimSistemi.csproj.nuget.dgspec.json
+    "C:\\Users\\Ali\\source\\repos\\KuaforYonetimSistemi\\KuaforYonetimSistemi\\KuaforYonetimSistemi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Ali\\source\\repos\\KuaforYonetimSistemi\\KuaforYonetimSistemi\\KuaforYonetimSistemi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ali\\source\\repos\\KuaforYonetimSistemi\\KuaforYonetimSistemi\\KuaforYonetimSistemi.csproj",
+        "projectName": "KuaforYonetimSistemi",
+        "projectPath": "C:\\Users\\Ali\\source\\repos\\KuaforYonetimSistemi\\KuaforYonetimSistemi\\KuaforYonetimSistemi.csproj",
+        "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ali\\source\\repos\\KuaforYonetimSistemi\\KuaforYonetimSistemi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Programlarim\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Bedirhan\\source\\repos\\koc-ali03\\kuafor-yonetim-sistemi\\src\\KuaforSalonu\\KuaforSalonu.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Bedirhan\\source\\repos\\koc-ali03\\kuafor-yonetim-sistemi\\src\\KuaforSalonu\\KuaforSalonu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bedirhan\\source\\repos\\koc-ali03\\kuafor-yonetim-sistemi\\src\\KuaforSalonu\\KuaforSalonu.csproj",
+        "projectName": "KuaforSalonu",
+        "projectPath": "C:\\Users\\Bedirhan\\source\\repos\\koc-ali03\\kuafor-yonetim-sistemi\\src\\KuaforSalonu\\KuaforSalonu.csproj",
+        "packagesPath": "C:\\Users\\Bedirhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bedirhan\\source\\repos\\koc-ali03\\kuafor-yonetim-sistemi\\src\\KuaforSalonu\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bedirhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
+>>>>>>> 263fd9411991f6b9be63f5ab306f7eb2f6823315:src/KuaforSalonu/obj/KuaforSalonu.csproj.nuget.dgspec.json
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+<<<<<<< HEAD:src/KuaforYonetimSistemi/obj/KuaforYonetimSistemi.csproj.nuget.dgspec.json
+          "auditMode": "direct"
+=======
+          "auditMode": "all"
+>>>>>>> 263fd9411991f6b9be63f5ab306f7eb2f6823315:src/KuaforSalonu/obj/KuaforSalonu.csproj.nuget.dgspec.json
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+<<<<<<< HEAD:src/KuaforYonetimSistemi/obj/KuaforYonetimSistemi.csproj.nuget.dgspec.json
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 263fd9411991f6b9be63f5ab306f7eb2f6823315:src/KuaforSalonu/obj/KuaforSalonu.csproj.nuget.dgspec.json
+        }
+      }
+    }
+  }
+}
