@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KuaforYonetimSistemi.Models.Calisan>
+
+@{
+    ViewData["Title"] = "Çalışanlar";
+}
+
+<h1 class="text-center my-4">Çalışanlar</h1>
+
+<!-- Admin rolündeki kullanıcılar için yeni çalışan ekleme butonu -->
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-end mb-3">
+        <a class="btn btn-primary btn-lg" asp-action="Create">
+            <i class="bi bi-plus-circle"></i> Yeni Çalışan Ekle
+        </a>
+    </div>
+}
+
+<div class="container">
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100" style="background-color: #343a40; color: white; border-radius: 15px;">
+                    <div class="card-header text-center" style="background-color: #495057; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <h5 class="card-title mb-0">@item.Isim</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Uzmanlık Alanı:</strong> @item.UzmanlikAlani</p>
+                        <p><strong>Salon:</strong> @item.Salon.Isim</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center">
+                        <!-- Admin işlemleri için butonlar -->
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-info btn-sm mx-1" asp-action="Details" asp-route-id="@item.Id">
+                                <i class="bi bi-info-circle"></i> Detaylar
+                            </a>
+                            <a class="btn btn-warning btn-sm mx-1" asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="bi bi-pencil-square"></i> Düzenle
+                            </a>
+                            <a class="btn btn-danger btn-sm mx-1" asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="bi bi-trash"></i> Sil
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

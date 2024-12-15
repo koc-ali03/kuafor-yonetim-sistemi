@@ -1,0 +1,40 @@
+﻿@model KuaforYonetimSistemi.Models.Calisan
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/Calisan.css" asp-append-version="true" />
+
+<h1 class="mb-4">Çalışan Detayları</h1>
+
+<div>
+    <h4>Çalışan Bilgileri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UzmanlikAlani)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UzmanlikAlani)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Isim)
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Düzenle</a> |
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>
