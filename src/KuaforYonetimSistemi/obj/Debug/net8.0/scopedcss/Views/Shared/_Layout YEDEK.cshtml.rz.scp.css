@@ -1,0 +1,63 @@
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-j53mwscxcn] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-j53mwscxcn] {
+  color: #0077cc;
+}
+
+.btn-primary[b-j53mwscxcn] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-j53mwscxcn], .nav-pills .show > .nav-link[b-j53mwscxcn] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-j53mwscxcn] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-j53mwscxcn] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-j53mwscxcn] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-j53mwscxcn] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+<<<<<<< HEAD:src/KuaforYonetimSistemi/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout YEDEK.cshtml.rz.scp.css
+.footer[b-j53mwscxcn] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+=======
+.footer[b-r9bsj7064a] {
+    position: relative; /* Absolute yerine relative veya static kullan */
+    bottom: auto; /* Sayfa içeriği ile birlikte hizalansın */
+    width: 100%;
+    background-color: #222;
+    color: #f1c40f;
+    text-align: center;
+    line-height: 60px;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+>>>>>>> 263fd9411991f6b9be63f5ab306f7eb2f6823315:src/KuaforSalonu/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+}
+

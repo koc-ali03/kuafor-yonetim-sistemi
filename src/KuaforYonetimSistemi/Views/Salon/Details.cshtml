@@ -1,0 +1,47 @@
+﻿@model KuaforYonetimSistemi.Models.Salon
+
+@{
+    ViewData["Title"] = "Detaylar";
+}
+
+<h1>Salon Detayları</h1>
+
+<div>
+    <h4>Salon Bilgileri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IletisimBilgisi)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IletisimBilgisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.AcilisSaati)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.AcilisSaati)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.KapanisSaati)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.KapanisSaati)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-link">Salonlar Listesine Dön</a>
+</div>

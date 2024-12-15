@@ -1,0 +1,37 @@
+﻿@model KuaforYonetimSistemi.Models.Servis
+
+@{
+    ViewData["Title"] = "Servis Detayları";
+}
+
+<h1 class="text-center">Servis Detayları</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center bg-primary text-white">
+                <h4>Servis Bilgileri</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4"><strong>Servis Adı:</strong></dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Isim)</dd>
+
+                    <dt class="col-sm-4"><strong>Süre:</strong></dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Sure) dk</dd>
+
+                    <dt class="col-sm-4"><strong>Ücret:</strong></dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Ucret) ₺</dd>
+
+                    <dt class="col-sm-4"><strong>Çalışan:</strong></dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Calisan.Isim)</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning btn-lg">Düzenle</a>
+            <a asp-action="Index" class="btn btn-secondary btn-lg">Listeye Dön</a>
+        </div>
+    </div>
+</div>

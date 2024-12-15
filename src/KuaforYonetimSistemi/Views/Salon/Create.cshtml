@@ -1,0 +1,62 @@
+﻿@model KuaforYonetimSistemi.Models.Salon
+
+@{
+    ViewData["Title"] = "Yeni Salon Ekle";
+}
+
+<h1>Yeni Salon Ekle</h1>
+
+<h4>Salon Bilgileri</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Isim" class="control-label">Salon Adı</label>
+                <input asp-for="Isim" class="form-control" placeholder="Salon Adı giriniz" />
+                <span asp-validation-for="Isim" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label">Adres</label>
+                <input asp-for="Adres" class="form-control" placeholder="Adres giriniz" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IletisimBilgisi" class="control-label">İletişim Bilgisi</label>
+                <input asp-for="IletisimBilgisi" class="form-control" placeholder="Telefon ya da e-posta giriniz" />
+                <span asp-validation-for="IletisimBilgisi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AcilisSaati" class="control-label">Açılış Saati</label>
+                <input asp-for="AcilisSaati" type="time" class="form-control" />
+                <span asp-validation-for="AcilisSaati" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="KapanisSaati" class="control-label">Kapanış Saati</label>
+                <input asp-for="KapanisSaati" type="time" class="form-control" />
+                <span asp-validation-for="KapanisSaati" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-success w-100" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-link">Listeye Dön</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
