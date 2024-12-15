@@ -1,0 +1,55 @@
+﻿@model KuaforYonetimSistemi.Models.Salon
+
+@{
+    ViewData["Title"] = "Silme Onayı";
+}
+
+<h1>Salon Silme Onayı</h1>
+
+<h3>Bu salonu silmek istediğinizden emin misiniz?</h3>
+<div>
+    <h4>Salon Bilgileri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Isim) (ID: @Html.DisplayFor(model => model.Id))
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IletisimBilgisi)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IletisimBilgisi)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.AcilisSaati)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.AcilisSaati)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.KapanisSaati)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.KapanisSaati)
+        </dd>
+    </dl>
+
+    <span class="text-danger">Dikkat! Bu salona bağlı çalışanlar ve servisler silinecektir.</span><br />
+    <span class="text-danger">Silinmesini istemediklerinizi farklı bir salona aktarın.</span>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger w-100" /> |
+        <a asp-action="Index" class="btn btn-link">Listeye Dön</a>
+    </form>
+</div>
+

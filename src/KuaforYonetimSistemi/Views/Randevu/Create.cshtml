@@ -1,0 +1,65 @@
+﻿@model KuaforYonetimSistemi.Models.Randevu
+
+@{
+    ViewData["Title"] = "Randevu Oluştur";
+}
+
+<h1 class="text-center">Randevu Oluştur</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="MusteriIsim" class="control-label font-weight-bold"></label>
+                <input asp-for="MusteriIsim" class="form-control" placeholder="Müşteri Adı" />
+                <span asp-validation-for="MusteriIsim" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RandevuTarihi" class="control-label font-weight-bold"></label>
+                <input asp-for="RandevuTarihi" class="form-control" type="datetime-local" />
+                <span asp-validation-for="RandevuTarihi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SalonId" class="control-label font-weight-bold"></label>
+                <select asp-for="SalonId" class="form-control" asp-items="ViewBag.SalonId">
+                    <option value="">Salon Seçiniz</option>
+                </select>
+                <span asp-validation-for="SalonId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ServisId" class="control-label font-weight-bold"></label>
+                <select asp-for="ServisId" class="form-control" asp-items="ViewBag.ServisId">
+                    <option value="">Servis Seçiniz</option>
+                </select>
+                <span asp-validation-for="ServisId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CalisanId" class="control-label font-weight-bold"></label>
+                <select asp-for="CalisanId" class="form-control" asp-items="ViewBag.CalisanId">
+                    <option value="">Çalışan Seçiniz</option>
+                </select>
+                <span asp-validation-for="CalisanId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Randevu Oluştur" class="btn btn-success btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
