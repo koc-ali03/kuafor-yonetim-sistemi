@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace KuaforYonetimSistemi.Models
@@ -7,27 +7,28 @@ namespace KuaforYonetimSistemi.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Tarih ve saat zorunlu")]
-        [Display(Name = "Randevu Tarihi ve Saati :")]
-        public DateTime RandevuTarihi { get; set; }
+        [Required(ErrorMessage = "Randevu tarihi zorunlu")]
+        [Display(Name = "Randevu Tarihi :")]
+        public DateTime Tarih { get; set; }
 
-        [Required(ErrorMessage = "Müşteri ismi zorunlu")]
-        [Display(Name = "Müşteri Adı :")]
-        public string MusteriIsim { get; set; }
+        [Required(ErrorMessage = "Başlangıç saati zorunlu")]
+        [Display(Name = "Başlangıç Saati :")]
+        public TimeSpan BaslangicSaati { get; set; }
 
         [Required(ErrorMessage = "Servis seçimi zorunlu")]
         [Display(Name = "Servis :")]
         public int ServisId { get; set; }
-        public Servis Servis { get; set; }
 
-        [Required(ErrorMessage = "Çalışan seçimi zorunlu")]
-        [Display(Name = "Çalışan :")]
-        public int CalisanId { get; set; }
-        public Calisan Calisan { get; set; }
+        public Servis? Servis { get; set; }
 
-        [Required(ErrorMessage = "Salon seçimi zorunlu")]
-        [Display(Name = "Salon :")]
-        public int SalonId { get; set; }
-        public Salon Salon { get; set; }
+        [Required(ErrorMessage = "Kullanıcı seçimi zorunlu")]
+        [Display(Name = "Kullanıcı :")]
+        public string KullaniciId { get; set; }
+
+        public IdentityUser? Kullanici { get; set; }
+
+        [Required]
+        [Display(Name = "Onaylandı mı :")]
+        public bool Onaylandi { get; set; } = false;
     }
 }

@@ -1,56 +1,47 @@
 ﻿@model KuaforYonetimSistemi.Models.Servis
 
 @{
-    ViewData["Title"] = "Servis Oluştur";
+    ViewData["Title"] = "Create";
 }
 
-<h1 class="text-center">Servis Oluştur</h1>
+<h1>Create</h1>
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
+<h4>Servis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Isim" class="control-label font-weight-bold"></label>
-                <input asp-for="Isim" class="form-control" placeholder="Servis Adı" />
+                <label asp-for="Isim" class="control-label"></label>
+                <input asp-for="Isim" class="form-control" />
                 <span asp-validation-for="Isim" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <label asp-for="Sure" class="control-label font-weight-bold"></label>
-                <input asp-for="Sure" class="form-control" type="number" placeholder="Süre (Dakika)" />
+                <label asp-for="Sure" class="control-label"></label>
+                <input asp-for="Sure" class="form-control" />
                 <span asp-validation-for="Sure" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <label asp-for="Ucret" class="control-label font-weight-bold"></label>
-                <input asp-for="Ucret" class="form-control" type="number" step="0.01" placeholder="Ücret (₺)" />
+                <label asp-for="Ucret" class="control-label"></label>
+                <input asp-for="Ucret" class="form-control" />
                 <span asp-validation-for="Ucret" class="text-danger"></span>
             </div>
-
-           
             <div class="form-group">
-                <label asp-for="CalisanId" class="control-label font-weight-bold"></label>
-                <select asp-for="CalisanId" class="form-control" asp-items="ViewBag.CalisanId">
-                    <option value="">Çalışan Seçiniz</option>
-                </select>
-                <span asp-validation-for="CalisanId" class="text-danger"></span>
+                <label asp-for="CalisanId" class="control-label"></label>
+                <select asp-for="CalisanId" class ="form-control" asp-items="ViewBag.CalisanId"></select>
             </div>
-
-            <div class="form-group text-center">
-                <input type="submit" value="Oluştur" class="btn btn-success btn-lg" />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div class="text-center">
-    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

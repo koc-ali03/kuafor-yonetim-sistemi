@@ -1,201 +1,76 @@
-﻿/* Ana sayfa stil ayarları */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.hero-section {
-    background-color: #2c3e50;
-    color: white;
-    padding: 50px 0;
-}
-
-    .hero-section h1 {
-        font-size: 3rem;
-        font-weight: 700;
-    }
-
-    .hero-section p {
-        font-size: 1.25rem;
-        margin-bottom: 30px;
-    }
-
-    .hero-section .btn {
-        background-color: #f39c12;
-        color: white;
-        font-size: 1.25rem;
-    }
-
-        .hero-section .btn:hover {
-            background-color: #e67e22;
-        }
-
-/* Salonlar ve Hizmetler Kartları */
-.card {
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #e2e2e2;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+﻿.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
     .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-.card-img-top {
-    border-bottom: 4px solid #f39c12;
-}
-
-.card-body {
-    padding: 20px;
-}
-
 .card-title {
-    font-size: 1.5rem;
-    color: #2c3e50;
+    color: #333;
     font-weight: bold;
 }
 
 .card-text {
-    font-size: 1rem;
-    color: #7f8c8d;
+    font-size: 0.9rem;
+    color: #555;
 }
 
-.card .btn-outline-primary {
-    border-color: #f39c12;
-    color: #f39c12;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.card .btn {
+    color: #007bff;
+    border-color: #007bff;
 }
 
-    .card .btn-outline-primary:hover {
-        background-color: #f39c12;
+    .card .btn:hover {
+        background-color: #007bff;
         color: white;
     }
 
-/* Yeni Eklemeler */
-.card .card-body p {
-    margin-bottom: 10px;
+.hero-section {
+    background: #f8f9fa;
+    padding: 60px 0;
 }
 
-/* Salonlar Kartı İçin Etiketler */
-.card .card-body label {
-    font-weight: bold;
-    color: #2c3e50;
+    .hero-section h1 {
+        font-size: 3rem;
+        color: #343a40;
+    }
+
+    .hero-section .btn-primary {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+.salon-section .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card .card-body p {
-    font-size: 1rem;
-    color: #7f8c8d;
-}
-
-/* Salon Kartı Hover Efekti */
-.card-body:hover {
-    background-color: #f1f1f1;
-}
-
-/* Hizmetler ve Yorumlar Bölümü */
-.services-section .col-md-3 {
-    padding: 20px;
-    background-color: #ecf0f1;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .services-section .col-md-3:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    .salon-section .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
     }
 
 .services-section i {
-    color: #f39c12;
+    color: #007bff;
     margin-bottom: 15px;
 }
 
-.testimonials-section .testimonial {
-    background-color: #ecf0f1;
+.testimonial {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    .testimonials-section .testimonial:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    .testimonial h6 {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #555;
     }
-
-.testimonials-section h6 {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-/* Sık Sorulan Sorular */
-.accordion-button {
-    background-color: #f39c12;
-    color: white;
-    font-weight: bold;
-}
-
-    .accordion-button:hover {
-        background-color: #e67e22;
-    }
-
-.accordion-body {
-    background-color: #ecf0f1;
-}
-
-/* Yenilikçi Butonlar */
-.btn-primary {
-    background-color: #f39c12;
-    border-color: #f39c12;
-    color: white;
-    font-weight: bold;
-}
-
-    .btn-primary:hover {
-        background-color: #e67e22;
-        border-color: #e67e22;
-    }
-
-/* Hero Butonu */
-.hero-section .btn {
-    padding: 15px 30px;
-    font-size: 1.25rem;
-    border-radius: 50px;
-}
-
-    .hero-section .btn:hover {
-        background-color: #e67e22;
-    }
-
-/* Genel Container Ayarları */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Salon Resmi ve Kart İçeriği */
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Üst Başlıklar */
-h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-h5 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #2c3e50;
-}

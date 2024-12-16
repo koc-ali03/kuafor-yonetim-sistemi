@@ -82,12 +82,9 @@ namespace KuaforYonetimSistemi.Controllers
             {
                 return NotFound();
             }
-
-            // Buradaki SelectList parametrelerini değiştirdik
-            ViewData["CalisanId"] = new SelectList(_context.Calisanlar, "Id", "Isim", servis.CalisanId);
+            ViewData["CalisanId"] = new SelectList(_context.Calisanlar, "Id", "Id", servis.CalisanId);
             return View(servis);
         }
-
 
         // POST: Servis/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -121,7 +118,7 @@ namespace KuaforYonetimSistemi.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CalisanId"] = new SelectList(_context.Calisanlar, "Id", "Isim", servis.CalisanId);
+            ViewData["CalisanId"] = new SelectList(_context.Calisanlar, "Id", "Id", servis.CalisanId);
             return View(servis);
         }
 

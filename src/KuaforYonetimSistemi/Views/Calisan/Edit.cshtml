@@ -3,52 +3,42 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<link rel="stylesheet" href="~/css/Calisan.css" asp-append-version="true" />
 
-<h1 class="mb-4">Edit</h1>
+<h1>Edit</h1>
 
 <h4>Calisan</h4>
-
 <hr />
-
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-
-            <div class="form-group mb-3">
-                <label asp-for="Isim" class="control-label">Isim</label>
-                <input asp-for="Isim" class="form-control" placeholder="Çalışan ismini girin" />
+            <div class="form-group">
+                <label asp-for="Isim" class="control-label"></label>
+                <input asp-for="Isim" class="form-control" />
                 <span asp-validation-for="Isim" class="text-danger"></span>
             </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="UzmanlikAlani" class="control-label">Uzmanlık Alanı</label>
-                <input asp-for="UzmanlikAlani" class="form-control" placeholder="Uzmanlık alanını girin" />
+            <div class="form-group">
+                <label asp-for="UzmanlikAlani" class="control-label"></label>
+                <input asp-for="UzmanlikAlani" class="form-control" />
                 <span asp-validation-for="UzmanlikAlani" class="text-danger"></span>
             </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="SalonId" class="control-label">Salon Seçin</label>
+            <div class="form-group">
+                <label asp-for="SalonId" class="control-label"></label>
                 <select asp-for="SalonId" class="form-control" asp-items="ViewBag.SalonId"></select>
                 <span asp-validation-for="SalonId" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary btn-block" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div class="mt-3">
-    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -1,40 +1,46 @@
 ﻿@model KuaforYonetimSistemi.Models.Randevu
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
 <h4>Randevu</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Tarih" class="control-label"></label>
                 <input asp-for="Tarih" class="form-control" />
                 <span asp-validation-for="Tarih" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="BaslangicSaati" class="control-label"></label>
+                <input asp-for="BaslangicSaati" class="form-control" />
+                <span asp-validation-for="BaslangicSaati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="ServisId" class="control-label"></label>
-                <select asp-for="ServisId" class ="form-control" asp-items="ViewBag.ServisId"></select>
+                <select asp-for="ServisId" class="form-control" asp-items="ViewBag.ServisId"></select>
+                <span asp-validation-for="ServisId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="KullaniciId" class="control-label"></label>
-                <select asp-for="KullaniciId" class ="form-control" asp-items="ViewBag.KullaniciId"></select>
+                <select asp-for="KullaniciId" class="form-control" asp-items="ViewBag.KullaniciId"></select>
+                <span asp-validation-for="KullaniciId" class="text-danger"></span>
             </div>
-            @*
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Onaylandi" /> @Html.DisplayNameFor(model => model.Onaylandi)
                 </label>
             </div>
-            *@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

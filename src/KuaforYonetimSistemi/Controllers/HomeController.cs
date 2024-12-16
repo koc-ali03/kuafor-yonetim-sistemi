@@ -1,27 +1,21 @@
-using KuaforYonetimSistemi.Models;
-using KuaforYonetimSistemi.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using KuaforYonetimSistemi.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace KuaforYonetimSistemi.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            // Veritabanýndan salonlarý çekiyoruz
-            var salons = await _context.Salons.ToListAsync();
-            return View(salons); // Veritabanýndaki salonlarý View'a gönderiyoruz
+            return View();
         }
 
         public IActionResult Privacy()

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KuaforYonetimSistemi.Data;
 using KuaforYonetimSistemi.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace KuaforYonetimSistemi.Controllers
 {
@@ -23,8 +22,8 @@ namespace KuaforYonetimSistemi.Controllers
         // GET: Calisan
         public async Task<IActionResult> Index()
         {
-            var calisanlar = _context.Calisanlar.Include(c => c.Salon);
-            return View(await calisanlar.ToListAsync());
+            var ApplicationDbContext = _context.Calisanlar.Include(c => c.Salon);
+            return View(await ApplicationDbContext.ToListAsync());
         }
 
         // GET: Calisan/Details/5
@@ -47,7 +46,6 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Calisan/Create
-        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim");
@@ -55,9 +53,10 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // POST: Calisan/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Isim,UzmanlikAlani,SalonId")] Calisan calisan)
         {
             if (ModelState.IsValid)
@@ -71,7 +70,6 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Calisan/Edit/5
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,14 +82,15 @@ namespace KuaforYonetimSistemi.Controllers
             {
                 return NotFound();
             }
-            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim", calisan.SalonId);
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id", calisan.SalonId);
             return View(calisan);
         }
 
         // POST: Calisan/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Isim,UzmanlikAlani,SalonId")] Calisan calisan)
         {
             if (id != calisan.Id)
@@ -119,12 +118,11 @@ namespace KuaforYonetimSistemi.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim", calisan.SalonId);
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id", calisan.SalonId);
             return View(calisan);
         }
 
         // GET: Calisan/Delete/5
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +144,6 @@ namespace KuaforYonetimSistemi.Controllers
         // POST: Calisan/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var calisan = await _context.Calisanlar.FindAsync(id);

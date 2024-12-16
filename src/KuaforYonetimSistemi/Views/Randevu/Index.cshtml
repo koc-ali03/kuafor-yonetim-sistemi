@@ -1,36 +1,60 @@
 ﻿@model IEnumerable<KuaforYonetimSistemi.Models.Randevu>
 
 @{
-    ViewData["Title"] = "Randevular";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center">Randevular</h1>
+<h1>Index</h1>
 
-<table class="table table-bordered">
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
     <thead>
         <tr>
-            <th>Müşteri Adı</th>
-            <th>Servis</th>
-            <th>Çalışan</th>
-            <th>Salon</th>
-            <th>Randevu Tarihi</th>
-            <th>İşlemler</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BaslangicSaati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Onaylandi)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var randevu in Model)
-        {
-            <tr>
-                <td>@randevu.MusteriIsim</td>
-                <td>@randevu.Servis.Isim</td>
-                <td>@randevu.Calisan.Isim</td>
-                <td>@randevu.Salon.Isim</td>
-                <td>@randevu.RandevuTarihi.ToString("g")</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@randevu.Id" class="btn btn-warning">Düzenle</a>
-                    <a asp-action="Delete" asp-route-id="@randevu.Id" class="btn btn-danger">Sil</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaslangicSaati)
+            </td>
+            <td>
+				@Html.DisplayFor(modelItem => item.Servis.Isim) (@Html.DisplayFor(modelItem => item.Servis.Calisan.Isim))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kullanici.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Onaylandi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>
