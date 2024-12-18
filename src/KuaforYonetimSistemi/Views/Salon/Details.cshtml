@@ -1,4 +1,7 @@
-﻿@model KuaforYonetimSistemi.Models.Salon
+﻿@using Microsoft.AspNetCore.Identity
+@model KuaforYonetimSistemi.Models.Salon
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Details";
@@ -43,6 +46,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    }
     <a asp-action="Index">Back to List</a>
 </div>

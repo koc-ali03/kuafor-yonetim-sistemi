@@ -23,19 +23,11 @@
                 </li>
                 <li>
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Salon" ? "active" : "")"
-                       asp-controller="Salon" asp-action="Index">Salon</a>
-                </li>
-                <li>
-                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Calisan" ? "active" : "")"
-                       asp-controller="Calisan" asp-action="Index">Çalışan</a>
-                </li>
-                <li>
-                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Servis" ? "active" : "")"
-                       asp-controller="Servis" asp-action="Index">Servis</a>
+                       asp-controller="Salon" asp-action="Index">Salonlarımız</a>
                 </li>
                 <li>
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Randevu" ? "active" : "")"
-                       asp-controller="Randevu" asp-action="Index">Randevu al</a>
+                       asp-controller="Randevu" asp-action="Randevu">Randevu al</a>
                 </li>
             </ul>
             <partial name="_LoginPartial" />

@@ -1,4 +1,7 @@
-﻿@model IEnumerable<KuaforYonetimSistemi.Models.Salon>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<KuaforYonetimSistemi.Models.Salon>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Index";
@@ -6,9 +9,13 @@
 
 <h1>Salonlar</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -48,11 +55,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.KapanisSaati)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            }
         </tr>
 }
     </tbody>

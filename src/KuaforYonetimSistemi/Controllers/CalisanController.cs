@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KuaforYonetimSistemi.Data;
 using KuaforYonetimSistemi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KuaforYonetimSistemi.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CalisanController : Controller
     {
         private readonly ApplicationDbContext _context;

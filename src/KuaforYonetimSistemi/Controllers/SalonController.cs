@@ -21,7 +21,6 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Salon
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Salons.ToListAsync());
@@ -46,6 +45,7 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Salon/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +56,7 @@ namespace KuaforYonetimSistemi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Isim,Adres,IletisimBilgisi,AcilisSaati,KapanisSaati")] Salon salon)
         {
             if (ModelState.IsValid)
@@ -68,6 +69,7 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Salon/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,6 +90,7 @@ namespace KuaforYonetimSistemi.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Isim,Adres,IletisimBilgisi,AcilisSaati,KapanisSaati")] Salon salon)
         {
             if (id != salon.Id)
@@ -119,6 +122,7 @@ namespace KuaforYonetimSistemi.Controllers
         }
 
         // GET: Salon/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +143,7 @@ namespace KuaforYonetimSistemi.Controllers
         // POST: Salon/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var salon = await _context.Salons.FindAsync(id);

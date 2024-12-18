@@ -1,0 +1,91 @@
+﻿<form asp-action="RandevuAl" method="post">
+    <div class="form-group">
+        <label for="SalonId">Salon:</label>
+        <select id="SalonId" class="form-control" name="SalonId" onchange="fetchCalisanlar()">
+            <option value="">Salon seçiniz</option>
+            @foreach (var salon in ViewBag.SalonId)
+            {
+                <option value="@salon.Value">@salon.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CalisanId">Kuaför:</label>
+        <select id="CalisanId" class="form-control" name="CalisanId" onchange="fetchTimeSlotsAndServisler()">
+            <option value="">Kuaför seçiniz</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Tarih">Tarih:</label>
+        <input type="date" id="Tarih" name="Tarih" class="form-control" onchange="fetchTimeSlotsAndServisler()" />
+    </div>
+
+    <div class="form-group">
+        <label for="TimeSlot">Randevu saati:</label>
+        <select id="TimeSlot" class="form-control" name="BaslangicSaati">
+            <option value="">Randevu saati seçiniz</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ServisId">Servis:</label>
+        <select id="ServisId" class="form-control" name="ServisId" multiple>
+            <option value="">Servis seçiniz</option>
+        </select>
+    </div>
+
+    @if (TempData["HataMesajı"] != null)
+    {
+        <br />
+        <div class="alert alert-danger">
+            @TempData["HataMesajı"]
+        </div>
+        <br />
+    }
+
+    <button type="submit" class="btn btn-primary">Randevu al</button>
+</form>
+
+<script>
+    function fetchCalisanlar() {
+        var salonId = document.getElementById("SalonId").value;
+        fetch(`/Randevu/SalondanCalisanlariAl?salonId=${salonId}`)
+            .then(response => response.json())
+            .then(data => {
+                var calisanSelect = document.getElementById("CalisanId");
+                calisanSelect.innerHTML = "<option value=''>Kuaför seçiniz</option>";
+                data.forEach(calisan => {
+                    calisanSelect.innerHTML += `<option value='${calisan.id}'>${calisan.isim}</option>`;
+                });
+            });
+    }
+
+    function fetchTimeSlotsAndServisler() {
+        var calisanId = document.getElementById("CalisanId").value;
+        var tarih = document.getElementById("Tarih").value;
+
+        if (calisanId && tarih) {
+            fetch(`/Randevu/RandevuSaatleriniAl?calisanId=${calisanId}&tarih=${tarih}`)
+                .then(response => response.json())
+                .then(data => {
+                    var timeSlotSelect = document.getElementById("TimeSlot");
+                    timeSlotSelect.innerHTML = "<option value=''>Randevu saati seçiniz</option>";
+                    data.forEach(slot => {
+                        timeSlotSelect.innerHTML += `<option value='${slot}'>${slot}</option>`;
+                    });
+                });
+
+            fetch(`/Randevu/CalisandanServisleriAl?calisanId=${calisanId}`)
+                .then(response => response.json())
+                .then(data => {
+                    var servisSelect = document.getElementById("ServisId");
+                    servisSelect.innerHTML = "";
+                    data.forEach(servis => {
+                        servisSelect.innerHTML += `<option value='${servis.id}'>${servis.isim}</option>`;
+                    });
+                });
+        }
+    }
+</script>

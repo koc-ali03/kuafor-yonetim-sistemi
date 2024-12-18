@@ -45,7 +45,7 @@ namespace KuaforYonetimSistemi.Data.Migrations
 
                     b.HasIndex("SalonId");
 
-                    b.ToTable("Calisanlar");
+                    b.ToTable("Calisanlar", (string)null);
                 });
 
             modelBuilder.Entity("KuaforYonetimSistemi.Models.Randevu", b =>
@@ -78,7 +78,7 @@ namespace KuaforYonetimSistemi.Data.Migrations
 
                     b.HasIndex("ServisId");
 
-                    b.ToTable("Randevular");
+                    b.ToTable("Randevular", (string)null);
                 });
 
             modelBuilder.Entity("KuaforYonetimSistemi.Models.Salon", b =>
@@ -109,7 +109,7 @@ namespace KuaforYonetimSistemi.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Salons");
+                    b.ToTable("Salons", (string)null);
                 });
 
             modelBuilder.Entity("KuaforYonetimSistemi.Models.Servis", b =>
@@ -137,7 +137,7 @@ namespace KuaforYonetimSistemi.Data.Migrations
 
                     b.HasIndex("CalisanId");
 
-                    b.ToTable("Servisler");
+                    b.ToTable("Servisler", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
