@@ -12,64 +12,70 @@
 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
 {
     <p>
-        <a asp-action="Create">Create New</a>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
     </p>
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Isim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IletisimBilgisi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AcilisSaati)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KapanisSaati)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Isim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IletisimBilgisi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AcilisSaati)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KapanisSaati)
-            </td>
-            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-            {
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            }
-            else
-            {
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                </td>
-            }
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Isim</h5>
+                    <p class="card-text"><strong>Adres:</strong> @item.Adres</p>
+                    <p class="card-text"><strong>İletişim:</strong> @item.IletisimBilgisi</p>
+                    <p class="card-text"><strong>Açılış Saati:</strong> @item.AcilisSaati</p>
+                    <p class="card-text"><strong>Kapanış Saati:</strong> @item.KapanisSaati</p>
+
+                    <div class="d-flex justify-content-between">
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <div>
+                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        border-radius: 10px;
+        border: none;
+    }
+
+    .card-body {
+        background-color: #f9f9f9;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    .row {
+        margin-top: 20px;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+</style>

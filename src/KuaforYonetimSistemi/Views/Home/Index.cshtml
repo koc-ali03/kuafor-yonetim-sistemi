@@ -1,129 +1,105 @@
-﻿@{
+﻿@model IEnumerable<KuaforYonetimSistemi.Models.Salon>
+
+@{
     ViewData["Title"] = "Ana Sayfa";
 }
 <link rel="stylesheet" href="~/css/anaSayfa.css" asp-append-version="true" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<div class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-4">Randevu Almanın Kolay Yolu</h1>
-        <p class="lead">Birden fazla kuaför veya berber salonundan randevu almak artık çok kolay! Hemen başlayın ve istediğiniz hizmeti seçin.</p>
-        <a href="~/Views/Salon" class="btn btn-primary btn-lg mt-3">Salonlarımızı Keşfedin</a>
+<!-- Hero Section with Slider -->
+<div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../wwwroot/image/bir.jpeg" class="d-block w-100" alt="Kuaför randevu alım sistemi">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="display-4">Kolay ve Hızlı Randevu</h1>
+                <p class="lead">Kuaför ve berber salonlarımızdan dilediğiniz zaman randevu alın, beklemeden hizmet alın.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../wwwroot/image/iki.jpg" class="d-block w-100" alt="Modern salonlar">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="display-4">Modern Salonlar</h1>
+                <p class="lead">Salonlarımız, konforlu ortamlarıyla sizi bekliyor.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../wwwroot/image/uc.jpeg" class="d-block w-100" alt="Hizmette mükemmellik">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="display-4">Hizmette Mükemmellik</h1>
+                <p class="lead">Her zaman en iyi hizmeti sunmak için buradayız.</p>
+            </div>
+        </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
 
+<!-- Salonlar Section -->
 <div id="salons" class="salon-section container mt-5">
-    <h2 class="text-center mb-4">Kuaför ve Berber Salonlarımız</h2>
+    <h2 class="text-center mb-4">Salonlarımız</h2>
     <div class="row">
-        <!-- Salon 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/image/salon1.jpg" class="card-img-top" alt="Salon 1">
-                <div class="card-body">
-                    <h5 class="card-title">Elite Barber</h5>
-                    <p class="card-text">Profesyonel hizmet ve modern saç stilleri için Elite Barber'ı tercih edin.</p>
-                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
+        @foreach (var salon in Model.Take(3))
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@salon.Isim</h5>
+                        <p class="card-text"><strong>İletişim:</strong> @salon.IletisimBilgisi</p>
+                        <p class="card-text"><strong>Adres:</strong> @salon.Adres</p>
+                        <p class="card-text"><strong>Çalışma Saatleri:</strong> @salon.AcilisSaati - @salon.KapanisSaati</p>
+                        <a href="@Url.Action("Index", "Randevu")" class="btn btn-outline-primary">Randevu Al</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Salon 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/image/salon2.jpg" class="card-img-top" alt="Salon 2">
-                <div class="card-body">
-                    <h5 class="card-title">Modern Kuaför</h5>
-                    <p class="card-text">Bakım ve güzellik hizmetleri için uzman kadromuzla hizmetinizdeyiz.</p>
-                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
-                </div>
-            </div>
-        </div>
-        <!-- Salon 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/image/salon3.jpg" class="card-img-top" alt="Salon 3">
-                <div class="card-body">
-                    <h5 class="card-title">City Barber</h5>
-                    <p class="card-text">Şehir merkezinde kolay ulaşım ve kaliteli hizmet için bizi tercih edin.</p>
-                    <a href="#" class="btn btn-outline-primary">Detayları Gör</a>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
 
-<div class="services-section container mt-5">
-    <h2 class="text-center mb-4">Sunduğumuz Hizmetler</h2>
-    <div class="row text-center">
-        <div class="col-md-3">
-            <i class="fas fa-cut fa-3x"></i>
-            <h5>Saç Kesimi</h5>
-            <p>Modern ve klasik saç kesimleri.</p>
-        </div>
-        <div class="col-md-3">
-            <i class="fas fa-spa fa-3x"></i>
-            <h5>Bakım</h5>
-            <p>Cilt ve saç bakım hizmetleri.</p>
-        </div>
-        <div class="col-md-3">
-            <i class="fas fa-paint-brush fa-3x"></i>
-            <h5>Renklendirme</h5>
-            <p>Profesyonel saç boyama.</p>
-        </div>
-        <div class="col-md-3">
-            <i class="fas fa-hand-sparkles fa-3x"></i>
-            <h5>Manikür & Pedikür</h5>
-            <p>El ve ayak bakımı.</p>
-        </div>
-    </div>
-</div>
-
-<div class="testimonials-section container mt-5">
-    <h2 class="text-center mb-4">Müşteri Yorumları</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="testimonial">
-                <p>"Hizmetten çok memnun kaldım. Elite Barber harika!"</p>
-                <h6>- Ahmet Y.</h6>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="testimonial">
-                <p>"Randevu almak çok kolaydı. City Barber tavsiye edilir."</p>
-                <h6>- Elif K.</h6>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="testimonial">
-                <p>"Profesyonel bir ekiple muhteşem bir deneyim yaşadım."</p>
-                <h6>- Mehmet T.</h6>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="faq-section container mt-5">
-    <h2 class="text-center mb-4">Sık Sorulan Sorular</h2>
-    <div class="accordion" id="faqAccordion">
+<!-- Randevu Bilgilendirme Section -->
+<div class="reservation-info-section container mt-5">
+    <h2 class="text-center mb-4">Randevu Bilgilendirme</h2>
+    <div class="accordion" id="reservationAccordion">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    Randevuyu nasıl iptal edebilirim?
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Randevuyu Nasıl Oluşturabilirim?
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show">
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#reservationAccordion">
                 <div class="accordion-body">
-                    Randevu detaylarınızdan "İptal Et" butonuna tıklayarak iptal işlemi yapabilirsiniz.
+                    Randevu almak için kolayca üye olun ve kaliteli kuaförlerimizden hizmet alın.
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                    Ödemeyi nasıl yapabilirim?
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Randevuyu Nasıl İptal Edebilirim?
                 </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#reservationAccordion">
                 <div class="accordion-body">
-                    Ödemeyi online olarak ya da salonda gerçekleştirebilirsiniz.
+                    Randevu detaylarınızdan "İptal Et" seçeneğini kullanarak kolayca iptal edebilirsiniz.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Ödeme Seçenekleri Nelerdir?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#reservationAccordion">
+                <div class="accordion-body">
+                    Ödemeyi salonumuzda gerçekleştirebilirsiniz.
                 </div>
             </div>
         </div>
