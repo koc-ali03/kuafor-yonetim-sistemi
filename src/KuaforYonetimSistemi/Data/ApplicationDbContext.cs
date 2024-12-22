@@ -15,5 +15,6 @@ namespace KuaforYonetimSistemi.Data
         public DbSet<Calisan> Calisanlar { get; set; }
         public DbSet<Servis> Servisler { get; set; }
         public DbSet<Randevu> Randevular { get; set; }
+
     }
 }

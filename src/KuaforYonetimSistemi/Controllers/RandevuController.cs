@@ -28,7 +28,18 @@ namespace KuaforYonetimSistemi.Controllers
         // GET: Randevu alma sayfası
         public IActionResult Randevu()
         {
-            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim");
+            //ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim");
+            //return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                ViewData["IsAuthenticated"] = false;
+            }
+        else
+            {
+                ViewData["IsAuthenticated"] = true;
+                ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Isim");
+            }
+
             return View();
         }
         

@@ -29,6 +29,10 @@
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Randevu" ? "active" : "")"
                        asp-controller="Randevu" asp-action="Randevu">Randevu al</a>
                 </li>
+                <li>
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "HairAPI" ? "active" : "")"
+                       asp-controller="HairAPI" asp-action="ChangeHairstyleForm">ChangeHairstyle</a>
+                </li>
             </ul>
             <partial name="_LoginPartial" />
         </nav>

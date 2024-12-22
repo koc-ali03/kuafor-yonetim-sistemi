@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Saç Modeli Değiştir";
+}
+
+<h2>Saç Modeli Değiştir</h2>
+
+<form id="uploadForm" enctype="multipart/form-data">
+    <div>
+        <label for="fileInput">Resim Yükle:</label>
+        <input type="file" id="fileInput" name="fileInput" accept="image/*" required />
+    </div>
+
+    <div>
+        <label for="hairType">Saç Tipi:</label>
+        <input type="text" id="hairType" name="hairType" placeholder="Saç tipi numarası (Örneğin: 3)" required />
+    </div>
+
+    <button type="submit">Saç Modelini Değiştir</button>
+</form>
+
+<div id="result">
+    <h3>Değiştirilen Saç Modeli</h3>
+    <img id="resultImage" src="" alt="Değiştirilen Saç Modeli" style="max-width: 100%; display: none;" />
+    <div id="errorMessage" style="color: red; display: none;"></div>
+</div>
+
+@section Scripts {
+    <script>
+        // Formu gönderdiğimizde AJAX ile işlem yapılacak
+        document.getElementById("uploadForm").onsubmit = async function (event) {
+            event.preventDefault(); // Sayfa yenilemesini engelle
+
+            var formData = new FormData();
+            formData.append("uploadedFile", document.getElementById("fileInput").files[0]);
+            formData.append("hairType", document.getElementById("hairType").value);
+
+            // API'ye gönderim yap
+            let response = await fetch('/HairAPI/ChangeHairstyle', {
+                method: 'POST',
+                body: formData
+            });
+
+            let result = await response.json();
+
+            if (result.resultImage) {
+                // Resim varsa göster
+                document.getElementById("resultImage").src = "data:image/png;base64," + result.resultImage;
+                document.getElementById("resultImage").style.display = "block";
+                document.getElementById("errorMessage").style.display = "none";
+            } else {
+                // Hata mesajını göster
+                document.getElementById("errorMessage").textContent = result.error || "Bilinmeyen bir hata oluştu.";
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("resultImage").style.display = "none";
+            }
+        };
+    </script>
+}

@@ -4,7 +4,7 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Salonlar";
 }
 
 <h1>Salonlar</h1>
@@ -12,7 +12,7 @@
 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
 {
     <p>
-        <a class="btn btn-primary" asp-action="Create">Create New</a>
+        <a class="btn btn-primary" asp-action="Create">Yeni Salon Ekle</a>
     </p>
 }
 
@@ -32,14 +32,14 @@
                         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
                             <div>
-                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
                             </div>
                         }
                         else
                         {
-                            <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
                         }
                     </div>
                 </div>
@@ -49,26 +49,55 @@
 </div>
 
 <style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4CAF50;
+    }
+
     .card {
         border-radius: 10px;
         border: none;
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
     }
 
     .card-body {
         background-color: #f9f9f9;
+        border-left: 5px solid #4CAF50;
     }
 
     .card-title {
         font-size: 1.5rem;
         font-weight: bold;
+        color: #4CAF50;
     }
 
     .card-text {
         font-size: 1rem;
+        color: #555;
     }
 
     .btn {
         margin-right: 5px;
+    }
+
+    .btn-warning {
+        background-color: #FFC107;
+        border-color: #FFC107;
+    }
+
+    .btn-info {
+        background-color: #17A2B8;
+        border-color: #17A2B8;
+    }
+
+    .btn-danger {
+        background-color: #DC3545;
+        border-color: #DC3545;
     }
 
     .row {

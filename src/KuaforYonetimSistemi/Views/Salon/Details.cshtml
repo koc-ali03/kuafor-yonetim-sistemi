@@ -4,51 +4,84 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Salon Detayları";
 }
 
-<h1>Details</h1>
+<h1>Salon Detayları</h1>
 
-<div>
-    <h4>Salon</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Isim)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Isim)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Adres)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Adres)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IletisimBilgisi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IletisimBilgisi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AcilisSaati)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AcilisSaati)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.KapanisSaati)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.KapanisSaati)
-        </dd>
-    </dl>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h4>Salon Bilgileri</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Isim)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Isim)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Adres)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Adres)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IletisimBilgisi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IletisimBilgisi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcilisSaati)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcilisSaati)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.KapanisSaati)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.KapanisSaati)
+            </dd>
+        </dl>
+    </div>
 </div>
-<div>
+
+<div class="mt-3">
     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
     {
-        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Düzenle</a>
     }
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-secondary" asp-action="Index">Geri Dön</a>
 </div>
+
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border-radius: 10px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .card-body {
+        background-color: #f9f9f9;
+    }
+
+    .card h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .row dt {
+        font-weight: bold;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>
