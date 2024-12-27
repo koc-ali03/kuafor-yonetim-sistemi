@@ -1,0 +1,45 @@
+﻿<h2>Saç Stili Analizi</h2>
+
+<form asp-controller="Hairstyle" asp-action="UploadHairstyle" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="imageFile">Resim Seçin:</label>
+        <input type="file" name="imageFile" id="imageFile" class="form-control-file" accept="image/*" />
+    </div>
+
+    <div class="form-group">
+        <label for="hairType1">Saç Tipi 1:</label>
+        <select name="hairType1" id="hairType1" class="form-control">
+            @foreach (var item in ViewBag.HairTypeNames)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="hairType2">Saç Tipi 2:</label>
+        <select name="hairType2" id="hairType2" class="form-control">
+            @foreach (var item in ViewBag.HairTypeNames)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="hairType3">Saç Tipi 3:</label>
+        <select name="hairType3" id="hairType3" class="form-control">
+            @foreach (var item in ViewBag.HairTypeNames)
+            {
+                <option value="@item.Key">@item.Value</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yükle ve Analiz Et</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}

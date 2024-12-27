@@ -1,0 +1,52 @@
+﻿@using Newtonsoft.Json.Linq;
+
+<h2>Analiz Sonuçları:</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Yüklediğiniz Fotoğraf:</h3>
+        <img src="@ViewBag.UploadedImagePath" alt="Yüklenen Fotoğraf" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+        <h3>Sonuçlar:</h3>
+        @if (ViewBag.ResultImagesBase64 != null)
+        {
+            <div class="row">
+                @{
+                    var hairTypeNames = ViewBag.HairTypeNames as Dictionary<string, string>;
+                    int index = 0;
+                }
+                @foreach (var imageBase64 in ViewBag.ResultImagesBase64)
+                {
+                    if (imageBase64 != null)
+                    {
+                        <div class="col-md-4">
+                            <img src="data:image/jpeg;base64,@imageBase64" alt="Sonuç" class="img-fluid" />
+                            <p>
+                                <b>
+                                    @if (hairTypeNames != null && ViewBag.SelectedHairTypes != null && index < ViewBag.SelectedHairTypes.Count)
+                                    {
+                                        @hairTypeNames[ViewBag.SelectedHairTypes[index]]
+                                    }
+                                </b>
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-4">
+                            <p>API'den sonuç alınamadı.</p>
+                        </div>
+                    }
+                    index++;
+                }
+            </div>
+        }
+        else
+        {
+            <p>Sonuç bulunamadı.</p>
+        }
+    </div>
+</div>
+
+<a asp-controller="Hairstyle" asp-action="Index" class="btn btn-secondary mt-3">Yeni Fotoğraf Yükle</a>
