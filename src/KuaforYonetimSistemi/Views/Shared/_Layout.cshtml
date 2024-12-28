@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,11 +16,17 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="logo">
-            <img src="~/image/logo.png" alt="SMBarber Logo" />
-            <h1>SMBarber</h1>
+            <h1>Örnek Kuaför</h1>
         </div>
         <nav>
             <ul>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <li>
+                        <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminPaneli" ? "active" : "")"
+                           asp-controller="AdminPaneli" asp-action="Index">Admin Paneli</a>
+                    </li>
+                }
                 <li>
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")"
                        asp-controller="Home" asp-action="Index">Ana Sayfa</a>
@@ -25,8 +35,17 @@
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Salon" ? "active" : "")"
                        asp-controller="Salon" asp-action="Index">Salonlarımız</a>
                 </li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li>
+                        <a class="nav-link @((ViewContext.RouteData.Values["controller"]?.ToString() == "Randevu"
+                                            && ViewContext.RouteData.Values["action"]?.ToString() == "Index") ? "active" : "")"
+                           asp-controller="Randevu" asp-action="index">Randevularım</a>
+                    </li>
+                }
                 <li>
-                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Randevu" ? "active" : "")"
+                    <a class="nav-link @((ViewContext.RouteData.Values["controller"]?.ToString() == "Randevu"
+                                           && ViewContext.RouteData.Values["action"]?.ToString() == "Randevu") ? "active" : "")"
                        asp-controller="Randevu" asp-action="Randevu">Randevu al</a>
                 </li>
                 <li>
@@ -48,11 +67,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            &copy; 2024 - KuaforYonetimSistemi - 
+            &copy; 2024 - KuaforYonetimSistemi -
             <a asp-controller="Home" asp-action="Privacy">Gizlilik Politikası</a>
+            - İletişim: 0 (262)-XXX-XX-XX kuafor@ornek.com
         </div>
     </footer>
-    
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

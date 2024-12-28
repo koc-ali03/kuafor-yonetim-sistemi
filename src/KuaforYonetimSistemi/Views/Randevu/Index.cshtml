@@ -4,73 +4,69 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Appointments";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-{
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold">Randevularım</h2>
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <a class="btn btn-sm btn-primary" asp-action="Create">
+                Yeni Randevu
+            </a>
+        }
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Tarih)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BaslangicSaati)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Servis)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kullanici)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Onaylandi)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tarih)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BaslangicSaati)
-            </td>
-            <td>
-				@Html.DisplayFor(modelItem => item.Servis.Isim) (@Html.DisplayFor(modelItem => item.Servis.Calisan.Isim))
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kullanici.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Onaylandi)
-            </td>
-            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-            {
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            }
-            else
-            {
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            }
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Servis</th>
+                    <th>Kullanıcı</th>
+                    <th>Onaylandı mı</th>
+                    <th style="width: 200px;">Eylemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderByDescending(r => r.Tarih))
+                {
+                    var eskiMi = item.Tarih < DateTime.Now.Date;
+                    <tr class="@(eskiMi ? "text-muted bg-light" : "")">
+                        <td>@Html.DisplayFor(modelItem => item.Tarih)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BaslangicSaati)</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Servis.Isim)
+                            <small class="text-muted">(@Html.DisplayFor(modelItem => item.Servis.Calisan.Isim))</small>
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Kullanici.UserName)</td>
+                        <td>
+                            <span class="badge @(item.Onaylandi ? "bg-success" : "bg-warning text-dark")">
+                                @(item.Onaylandi ? "Onaylandi" : "Bekleniyor")
+                            </span>
+                        </td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@item.Id">
+                                    Detaylar
+                                </a>
+                                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                {
+                                    <a class="btn btn-sm btn-secondary" asp-action="Edit" asp-route-id="@item.Id">
+                                        Düzenle
+                                    </a>
+                                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">
+                                        Sil
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

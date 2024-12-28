@@ -33,8 +33,30 @@ else
 
         <div class="form-group">
             <label for="Tarih">Tarih:</label>
-            <input type="date" id="Tarih" name="Tarih" class="form-control" onchange="fetchTimeSlotsAndServisler()" />
+            <select id="Tarih" name="Tarih" class="form-control" onchange="fetchTimeSlotsAndServisler()">
+                <script>
+					// Bugün dahil önümüzdeki 7 günü seçenek olarak sunuyor
+                    const gun = new Date();
+                    for (let i = 0; i < 7; i++) {
+                        const date = new Date(gun);
+                        date.setDate(gun.getDate() + i);
+
+                        // Tarih değerini YYYY-MM-DD olarak saklıyor
+                        const formattedDate = date.toISOString().split('T')[0];
+
+                        // Fakat ekrana DD-MM-YYYY olarak yazdırılıyor
+                        const displayDate = date.toLocaleDateString('tr-TR', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric'
+                        });
+
+                        document.write(`<option value="${formattedDate}">${displayDate}</option>`);
+                    }
+                </script>
+            </select>
         </div>
+
 
         <div class="form-group">
             <label for="TimeSlot">Randevu saati:</label>
@@ -59,6 +81,7 @@ else
             <br />
         }
 
+        <br />
         <button type="submit" class="btn btn-primary">Randevu al</button>
     </form>
 }

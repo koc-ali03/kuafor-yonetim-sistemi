@@ -128,6 +128,19 @@ namespace KuaforYonetimSistemi.Controllers
                 return RedirectToAction("Randevu");
             }
 
+            // KUllanıcının ID'sini alır
+            var currentUserId = _userManager.GetUserId(User);
+
+            // Kullanıcı aynı tarih ve saatte başka bir randevu almış mı kontrol eder
+            var existingUserAppointment = _context.Randevular
+                .FirstOrDefault(r => r.KullaniciId == currentUserId && r.Tarih.Date == Tarih.Date && r.BaslangicSaati == BaslangicSaati);
+
+            if (existingUserAppointment != null)
+            {
+                TempData["HataMesajı"] = "Bu tarih ve saat için zaten bir randevunuz var. Lütfen farklı bir tarih veya saat seçin.";
+                return RedirectToAction("Randevu");
+            }
+
             // Yeni randevu nesnesi oluşturulur (Veritabanına ekleyebilmek için)
             var randevu = new Randevu
             {
@@ -200,10 +213,24 @@ namespace KuaforYonetimSistemi.Controllers
                 return NotFound();
             }
 
+            var currentUserId = _userManager.GetUserId(User);
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            // Kullanıcı admin mi
+            bool isAdmin = await _userManager.IsInRoleAsync(currentUser, "Admin");
+
+            // Kullanıcı admin mi, ya da giriş yapan kullanıcının randevuyu alan kullanıcı ile aynı mı kontrol eder
+            if (!(randevu.KullaniciId == currentUserId || isAdmin))
+            {
+                // Eğer başka bir kullanıcının randevusu görüntülenmeye çalışılıyorsa, hata mesajı gösterir
+                return Forbid();
+            }
+
             return View(randevu);
         }
 
         // GET: Randevu/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["KullaniciId"] = new SelectList(_context.Users, "Id", "UserName");
