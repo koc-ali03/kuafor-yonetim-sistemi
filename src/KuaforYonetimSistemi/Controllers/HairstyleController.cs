@@ -17,8 +17,9 @@ namespace KuaforYonetimSistemi.Controllers
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly string _uploadFolder;
+        private readonly string _apiKey;
 
-        public HairstyleController(IHttpClientFactory clientFactory, IWebHostEnvironment env)
+        public HairstyleController(IHttpClientFactory clientFactory, IWebHostEnvironment env, IConfiguration configuration)
         {
             _clientFactory = clientFactory;
             _uploadFolder = Path.Combine(env.WebRootPath, "uploads");
@@ -27,6 +28,8 @@ namespace KuaforYonetimSistemi.Controllers
             {
                 Directory.CreateDirectory(_uploadFolder);
             }
+
+            _apiKey = configuration["APIKeys:HairstyleAPI"];
         }
 
         public IActionResult Index()
@@ -110,11 +113,10 @@ namespace KuaforYonetimSistemi.Controllers
                 var request = new HttpRequestMessage
                 {
                     Method = HttpMethod.Post,
-                    RequestUri = new Uri("https://hairstyle-changer.p.rapidapi.com/huoshan/facebody/hairstyle"),
+                    RequestUri = new Uri("https://www.ailabapi.com/api/portrait/effects/hairstyle-editor"),
                     Headers =
                     {
-                        { "x-rapidapi-key", "6a2b428e00msh4a46f9d648158ddp1112d7jsn27be06f9a950" },
-                        { "x-rapidapi-host", "hairstyle-changer.p.rapidapi.com" },
+                        { "ailabapi-api-key", _apiKey },
                     },
                     Content = new MultipartFormDataContent
                     {

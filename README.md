@@ -2,6 +2,9 @@
 
 Bu proje, ASP.NET Core MVC teknolojisi kullanılarak geliştirilmiş bir kuaför/berber işletme yönetim sistemidir. Sistem, salonların işlemlerini, çalışanların müsaitlik durumlarını ve randevu yönetimini etkin bir şekilde takip etme ve yönetme imkanı sunar. Ayrıca, kullanıcılar için yapay zeka destekli saç modeli ve renk önerileri sağlar.
 
+> [!NOTE]
+> Projede yapay zeka özelliği için API anahtarı gerekmektedir, ekleme talimatları için [buraya tıklayın](#api-anahtarı-ekleme).
+
 ## Proje Özellikleri
 
 ### 1. Kuaför/Berber Tanımlamaları
@@ -28,6 +31,14 @@ Bu proje, ASP.NET Core MVC teknolojisi kullanılarak geliştirilmiş bir kuaför
 - **Veritabanı**: PostgreSQL
 - **ORM**: Entity Framework Core
 - **Ek Özellikler**: REST API, Yapay Zeka Entegrasyonu
+
+## API Anahtarı Ekleme
+Yapay zeka destekli saç modeli ve renk önerileri özelliğini kullanmak için API anahtarını yapılandırmanız gerekir. Aşağıdaki adımları takip edin:
+```bash
+dotnet user-secrets init
+dotnet user-secrets set "APIKeys:HairstyleAPI" "API-Anahtarınız-Buraya"
+```
+Bu anahtar, proje çalıştırıldığında Secret Manager üzerinden otomatik olarak alınır.
 
 ## Katkıda Bulunanlar
 - Bedirhan Can
